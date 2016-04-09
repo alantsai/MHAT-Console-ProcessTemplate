@@ -59,5 +59,29 @@ namespace MHAT.ConsoleApp.ProcessTemplate
             Output = output ?? System.Console.Out;
             ErrorOutput = errorOutput ?? System.Console.Error;
         }
+
+        /// <summary>
+        /// Action perform before process start
+        /// </summary>
+        protected virtual void PreProcess()
+        {
+        }
+
+        /// <summary>
+        /// Action perform after process finish
+        /// </summary>
+        protected virtual void PostProcess()
+        {
+        }
+
+        /// <summary>
+        /// Start Process
+        /// </summary>
+        public void Process()
+        {
+            PreProcess();
+
+            PostProcess();
+        }
     }
 }
