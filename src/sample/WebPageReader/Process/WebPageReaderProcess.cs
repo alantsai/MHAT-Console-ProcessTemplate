@@ -11,6 +11,8 @@ namespace WebPageReader.Process
 {
     public class WebPageReaderProcess : BaseReadInputProcessTemplate<WebPageReaderOption>
     {
+        public int LineCount { get; set; }
+
         protected override void PreProcess()
         {
             Output.WriteLine("Getting the page content ...");
@@ -28,7 +30,15 @@ namespace WebPageReader.Process
 
         protected override void ProcessLine(string line)
         {
+            LineCount++;
+
             Output.WriteLine(line);
+
+            // stop process at 10th line
+            //if (LineCount == 10)
+            //{
+            //    IsStopReadingInput = true;
+            //}
         }
     }
 }

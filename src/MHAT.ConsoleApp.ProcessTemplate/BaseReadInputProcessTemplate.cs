@@ -17,6 +17,15 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         : BaseProcessTemplate<TOption> where TOption : new()
     {
         /// <summary>
+        /// Gets or sets a value indicating whether should stop reading input
+        /// which means stop process
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is stop reading input; otherwise, <c>false</c>.
+        /// </value>
+        protected bool IsStopReadingInput { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="BaseReadProcessInputTemplate{TOption}"/> class.
         /// </summary>
         /// <param name="input">The input.</param>
@@ -26,6 +35,7 @@ namespace MHAT.ConsoleApp.ProcessTemplate
                 TextWriter output = null, TextWriter errorOutput = null)
             : base(input, output, errorOutput)
         {
+            IsStopReadingInput = false;
         }
 
         /// <summary>
@@ -35,7 +45,7 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         {
             var line = Input.ReadLine();
 
-            while (line != null)
+            while (line != null && IsStopReadingInput == false)
             {
                 ProcessLine(line);
 
