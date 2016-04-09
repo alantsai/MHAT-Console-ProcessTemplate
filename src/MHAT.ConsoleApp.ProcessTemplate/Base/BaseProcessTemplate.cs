@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using CommandLine;
 
-namespace MHAT.ConsoleApp.ProcessTemplate
+namespace MHAT.ConsoleApp.ProcessTemplate.Base
 {
     /// <summary>
     /// Base class for easy create prcoess in console app
+    /// This class is internal base class
     /// </summary>
     /// <typeparam name="TOption">The type of the option class</typeparam>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class BaseProcessTemplate<TOption>
         where TOption : new()
     {
@@ -44,8 +47,14 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// <value>
         /// The arugemnt option.
         /// </value>
-        protected TOption ArugemntOption { get; set; }
+        protected virtual TOption ArugemntOption { get; set; }
 
+        /// <summary>
+        /// Gets or sets the arguments.
+        /// </summary>
+        /// <value>
+        /// The arguments.
+        /// </value>
         protected string[] Args { get; set; }
 
         /// <summary>
@@ -55,7 +64,7 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// <param name="input">The input.</param>
         /// <param name="output">The output.</param>
         /// <param name="errorOutput">The error output.</param>
-        public BaseProcessTemplate(TextReader input = null,
+        internal BaseProcessTemplate(TextReader input = null,
             TextWriter output = null, TextWriter errorOutput = null)
         {
             Input = input ?? System.Console.In;

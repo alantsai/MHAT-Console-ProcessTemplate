@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHAT.ConsoleApp.ProcessTemplate.Base;
 
 namespace MHAT.ConsoleApp.ProcessTemplate
 {
@@ -12,7 +13,7 @@ namespace MHAT.ConsoleApp.ProcessTemplate
     /// Terminate when input is null
     /// </summary>
     /// <typeparam name="TOption">The type of the option.</typeparam>
-    /// <seealso cref="MHAT.ConsoleApp.ProcessTemplate.BaseProcessTemplate{TOption}" />
+    /// <seealso cref="MHAT.ConsoleApp.ProcessTemplate.Base.BaseProcessTemplate{TOption}" />
     public abstract class BaseReadInputProcessTemplate<TOption>
         : BaseProcessTemplate<TOption> where TOption : new()
     {
