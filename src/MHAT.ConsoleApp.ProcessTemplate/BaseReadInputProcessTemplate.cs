@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MHAT.ConsoleApp.ProcessTemplate.Base;
+using MHAT.ConsoleApp.ProcessTemplate.Model;
 
 namespace MHAT.ConsoleApp.ProcessTemplate
 {
@@ -60,6 +62,30 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// <param name="line">The line.</param>
         protected virtual void ProcessLine(string line)
         {
+        }
+    }
+
+    /// <summary>
+    /// Process template which deal with reading and outputing
+    /// Terminate when input is null
+    /// This one does not need argument as option
+    /// </summary>
+    /// <seealso cref="MHAT.ConsoleApp.ProcessTemplate.Base.BaseProcessTemplate{TOption}" />
+    public abstract class BaseReadInputProcessTemplate
+        : BaseReadInputProcessTemplate<EmptyOption>
+    {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        protected sealed override EmptyOption ArugemntOption
+        {
+            get
+            {
+                return base.ArugemntOption;
+            }
+
+            set
+            {
+                base.ArugemntOption = value;
+            }
         }
     }
 }

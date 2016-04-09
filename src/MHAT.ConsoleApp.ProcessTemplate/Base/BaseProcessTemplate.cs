@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using CommandLine;
+using MHAT.ConsoleApp.ProcessTemplate.Model;
 
 namespace MHAT.ConsoleApp.ProcessTemplate.Base
 {
@@ -89,6 +90,15 @@ namespace MHAT.ConsoleApp.ProcessTemplate.Base
         }
 
         /// <summary>
+        /// Determine whether argument should be parse into class
+        /// </summary>
+        /// <returns></returns>
+        private bool IsCallObjectParse()
+        {
+            return typeof(TOption) != typeof(EmptyOption);
+        }
+
+        /// <summary>
         /// Parses the argument option.
         /// </summary>
         /// <param name="args">The arguments.</param>
@@ -96,7 +106,10 @@ namespace MHAT.ConsoleApp.ProcessTemplate.Base
         {
             Args = args;
 
-            Parser.Default.ParseArgumentsStrict(args, ArugemntOption);
+            if (IsCallObjectParse())
+            {
+                Parser.Default.ParseArgumentsStrict(args, ArugemntOption);
+            }
         }
 
         /// <summary>

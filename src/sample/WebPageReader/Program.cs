@@ -11,9 +11,13 @@ namespace WebPageReader
     {
         static void Main(string[] args)
         {
-            var process = new WebPageReaderProcess();
+            //var process = new WebPageReaderProcess();
 
-            process.StartProcess(args);
+            //process.StartProcess(args);
+
+            var process2 = new WebPageReaderUsingConsoleInputProcess();
+
+            process2.StartProcess(args);
         }
     }
 }

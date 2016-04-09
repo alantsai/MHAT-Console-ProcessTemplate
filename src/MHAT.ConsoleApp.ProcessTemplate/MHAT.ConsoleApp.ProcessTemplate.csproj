@@ -47,6 +47,7 @@
     <Compile Include="BaseExecuteProcessTemplate.cs" />
     <Compile Include="Base\BaseProcessTemplate.cs" />
     <Compile Include="BaseReadInputProcessTemplate.cs" />
+    <Compile Include="Model\EmptyOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
