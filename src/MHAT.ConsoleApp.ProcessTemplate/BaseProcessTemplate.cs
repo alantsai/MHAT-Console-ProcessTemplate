@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using CommandLine;
 
 namespace MHAT.ConsoleApp.ProcessTemplate
 {
@@ -58,6 +59,8 @@ namespace MHAT.ConsoleApp.ProcessTemplate
             Input = input ?? System.Console.In;
             Output = output ?? System.Console.Out;
             ErrorOutput = errorOutput ?? System.Console.Error;
+
+            ArugemntOption = new TOption();
         }
 
         /// <summary>
@@ -75,11 +78,22 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         }
 
         /// <summary>
+        /// Parses the argument option.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        private void ParseArgOption(string[] args)
+        {
+            Parser.Default.ParseArgumentsStrict(args, ArugemntOption);
+        }
+
+        /// <summary>
         /// Start Process
         /// </summary>
-        public void Process()
+        public void Process(string[] args)
         {
             PreProcess();
+
+            ParseArgOption(args);
 
             PostProcess();
         }
