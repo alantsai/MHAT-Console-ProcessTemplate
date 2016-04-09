@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHAT.ConsoleApp.ProcessTemplate", "MHAT.ConsoleApp.ProcessTemplate\MHAT.ConsoleApp.ProcessTemplate.csproj", "{417C510C-57EB-48E9-B225-B30F02EC81B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{5F458B02-128B-406D-9094-AD62406349E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPageReader", "sample\WebPageReader\WebPageReader.csproj", "{B57ABCD0-C0D3-4F87-9745-66667669DD69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{417C510C-57EB-48E9-B225-B30F02EC81B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417C510C-57EB-48E9-B225-B30F02EC81B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417C510C-57EB-48E9-B225-B30F02EC81B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B57ABCD0-C0D3-4F87-9745-66667669DD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B57ABCD0-C0D3-4F87-9745-66667669DD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B57ABCD0-C0D3-4F87-9745-66667669DD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B57ABCD0-C0D3-4F87-9745-66667669DD69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B57ABCD0-C0D3-4F87-9745-66667669DD69} = {5F458B02-128B-406D-9094-AD62406349E8}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 59ea49e6-0a7b-4e33-a04b-b5bc65bf7a98
