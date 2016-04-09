@@ -46,6 +46,8 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// </value>
         protected TOption ArugemntOption { get; set; }
 
+        protected string[] Args { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseProcessTemplate" /> class.
         /// </summary>
@@ -83,7 +85,26 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// <param name="args">The arguments.</param>
         private void ParseArgOption(string[] args)
         {
+            Args = args;
+
             Parser.Default.ParseArgumentsStrict(args, ArugemntOption);
+        }
+
+        /// <summary>
+        /// Determines whether process can start
+        /// Last method entry point before prcoess start running
+        /// </summary>
+        /// <returns></returns>
+        protected virtual bool IsStartProcess()
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Processes the input.
+        /// </summary>
+        private void ProcessInput()
+        {
         }
 
         /// <summary>
@@ -91,11 +112,16 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// </summary>
         public void Process(string[] args)
         {
-            PreProcess();
-
             ParseArgOption(args);
 
-            PostProcess();
+            if (IsStartProcess())
+            {
+                PreProcess();
+
+                ProcessInput();
+
+                PostProcess();
+            }
         }
     }
 }
