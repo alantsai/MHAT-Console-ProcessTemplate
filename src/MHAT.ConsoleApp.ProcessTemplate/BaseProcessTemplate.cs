@@ -103,30 +103,15 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// <summary>
         /// Processes the input.
         /// </summary>
-        private void ProcessInput()
-        {
-             var line = Input.ReadLine();
-
-            while (line != null)
-            {
-                ProcessLine(line);
-
-                line = Input.ReadLine();
-            }
-        }
-
-        /// <summary>
-        /// Processes the line.
-        /// </summary>
-        /// <param name="line">The line.</param>
-        protected virtual void ProcessLine(string line)
+        protected virtual void Process()
         {
         }
 
         /// <summary>
         /// Start Process
         /// </summary>
-        public void Process(string[] args)
+        /// <param name="args">The arguments.</param>
+        public void StartProcess(string[] args)
         {
             ParseArgOption(args);
 
@@ -134,7 +119,7 @@ namespace MHAT.ConsoleApp.ProcessTemplate
             {
                 PreProcess();
 
-                ProcessInput();
+                Process();
 
                 PostProcess();
             }
