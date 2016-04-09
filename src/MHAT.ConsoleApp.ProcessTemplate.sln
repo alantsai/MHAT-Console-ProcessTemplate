@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHAT.Console.ProcessTemplate", "MHAT.Console.ProcessTemplate\MHAT.Console.ProcessTemplate.csproj", "{417C510C-57EB-48E9-B225-B30F02EC81B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHAT.ConsoleApp.ProcessTemplate", "MHAT.ConsoleApp.ProcessTemplate\MHAT.ConsoleApp.ProcessTemplate.csproj", "{417C510C-57EB-48E9-B225-B30F02EC81B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

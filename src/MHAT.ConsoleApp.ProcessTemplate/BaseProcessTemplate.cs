@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace MHAT.Console.ProcessTemplate
+namespace MHAT.ConsoleApp.ProcessTemplate
 {
     /// <summary>
     /// Base class for easy create prcoess in console app

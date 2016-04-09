@@ -7,8 +7,8 @@
     <ProjectGuid>{417C510C-57EB-48E9-B225-B30F02EC81B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MHAT.Console.ProcessTemplate</RootNamespace>
-    <AssemblyName>MHAT.Console.ProcessTemplate</AssemblyName>
+    <RootNamespace>MHAT.ConsoleApp.ProcessTemplate</RootNamespace>
+    <AssemblyName>MHAT.ConsoleApp.ProcessTemplate</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
