@@ -9,7 +9,9 @@ namespace MHAT.ConsoleApp.ProcessTemplate
     /// <summary>
     /// Base class for easy create prcoess in console app
     /// </summary>
-    public abstract class BaseProcessTemplate
+    /// <typeparam name="TOption">The type of the option class</typeparam>
+    public abstract class BaseProcessTemplate<TOption>
+        where TOption : new()
     {
         /// <summary>
         /// Gets the error output.
@@ -34,6 +36,14 @@ namespace MHAT.ConsoleApp.ProcessTemplate
         /// The output.
         /// </value>
         protected TextWriter Output { get; set; }
+
+        /// <summary>
+        /// Gets or sets the arugemnt option.
+        /// </summary>
+        /// <value>
+        /// The arugemnt option.
+        /// </value>
+        protected TOption ArugemntOption { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseProcessTemplate" /> class.
